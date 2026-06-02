@@ -3,62 +3,52 @@ using namespace std;
 
 int main()
 {
-    string name = "ahmed";
-
     for (int i = 1; i <= 7; i++)
     {
-        for (int k = 0; k < name.length(); k++)
+        // A
+        for (int j = 1; j <= 5; j++)
         {
-            char ch = name[k];
-
-            for (int j = 1; j <= 5; j++)
-            {
-                if (ch == 'a')
-                {
-                    if (j == 1 || j == 5 || i == 1 || i == 4)
-                        cout << "*";
-                    else
-                        cout << " ";
-                }
-                else if (ch == 'h')
-                {
-                    if (j == 1 || j == 5 || i == 4)
-                        cout << "*";
-                    else
-                        cout << " ";
-                }
-                else if (ch == 'm')
-                {
-                    if (j == 1 || j == 5 || (i == j && j <= 3) || (i + j == 6 && j >= 3))
-                        cout << "*";
-                    else
-                        cout << " ";
-                }
-                else if (ch == 'e')
-                {
-                    if (j == 1 || i == 1 || i == 4 || i == 7)
-                        cout << "*";
-                    else
-                        cout << " ";
-                }
-                else if (ch == 'd')
-                {
-                    if (j == 1 || i == 1 || i == 7 || (j == 5 && i != 1 && i != 7))
-                        cout << "*";
-                    else
-                        cout << " ";
-                }
-                else
-                {
-                    cout << " ";
-                }
-            }
-
-            cout << "  ";
+            if ((i == 1 && j > 1 && j < 5) ||
+                (i == 4) ||
+                ((j == 1 || j == 5) && i > 1))
+                cout << "*";
+            else
+                cout << " ";
+        }      cout << "  ";
+        // H
+        for (int j = 1; j <= 5; j++)
+        {
+            if (j == 1 || j == 5 || i == 4)
+                cout << "*";
+            else
+                cout << " ";
+        }   cout << "  "; // M
+        for (int j = 1; j <= 5; j++)
+        {
+            if (j == 1 || j == 5 || (i == 2 && j != 3) || (j == 3 && i == 3))
+                cout << "*";
+            else
+                cout << " ";
+        }      cout << "  ";
+        //e
+        for (int x = 1;x <= 5;x++) {
+            if (x == 1 || i == 1 || i == 4 || i == 7)
+                cout << "*";
+            else
+                cout << " ";
         }
-
+        cout << "  ";
+        // D
+        for (int j = 1; j <= 5; j++)
+        {
+            if (j == 1 ||
+                ((i == 1 || i == 7) && j < 5) ||
+                (j == 5 && i > 1 && i < 7))
+                cout << "*";
+            else
+                cout << " ";
+        }
         cout << endl;
     }
-
     return 0;
 }
