@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string name = "mina";
+
+    for (int i = 1; i <= 7; i++)
+    {
+        for (int k = 0; k < name.length(); k++)
+        {
+            char ch = name[k];
+
+            for (int j = 1; j <= 5; j++)
+            {
+                if (ch == 'm')
+                {
+                    if (j == 1 || j == 5 || (i == j && j <= 3) || (i + j == 6 && j >= 3))
+                        cout << "*";
+                    else
+                        cout << " ";
+                }
+                else if (ch == 'i')
+                {
+                    if (j == 3 || i == 1 || i == 7)
+                        cout << "*";
+                    else
+                        cout << " ";
+                }
+                else if (ch == 'n')
+                {
+                    if (j == 1 || j == 5 || j == i)
+                        cout << "*";
+                    else
+                        cout << " ";
+                }
+                else if (ch == 'a')
+                {
+                    if (j == 1 || j == 5 || i == 1 || i == 4)
+                        cout << "*";
+                    else
+                        cout << " ";
+                }
+                else
+                {
+                    cout << " ";
+                }
+            }
+
+            cout << "  ";
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
